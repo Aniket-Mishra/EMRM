@@ -157,6 +157,8 @@ def mine_ltree_rules(
     out.attrs["global_var_residual"] = var_g
     out.attrs["feature_names"] = feature_names
     out.attrs["tree"] = tree
+    out.attrs["feature_names"] = feature_names
+    out.attrs["tree"] = tree
     return out
 
 

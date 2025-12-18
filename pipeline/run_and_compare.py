@@ -11,10 +11,23 @@ from I_conjunction_rules import mine_conj_rules
 from II_polynomial_rules import augment_with_poly
 from III_d_tree_rules import mine_ltree_rules
 from IV_symbolic_rules import mine_lsymb_rules_light
+from sklearn.tree import export_text
 from utils import (
     annotate_interpretability,
     permutation_pvalue,
 )
+
+
+def pretty_print_tree(
+    tree: DecisionTreeRegressor,
+    feature_names: List[str],
+    max_depth: int = None,
+) -> str:
+    """
+    Returns a human-readable text representation of the decision tree.
+    max_depth can be used to keep the printout small (e.g., 2 or 3).
+    """
+    return export_text(tree, feature_names=feature_names, max_depth=max_depth)
 
 
 def path_root() -> Path:
@@ -194,6 +207,12 @@ def main():
             top_k=TOP_K_PER_LANGUAGE,
             random_state=LTREE_RANDOM_STATE,
         )
+        # print(results_tree[["rule", "length", "size", "q_residual"]].head(20))
+        tree = results_tree.attrs["tree"]
+        feature_names = results_tree.attrs["feature_names"]
+
+        tree_txt = pretty_print_tree(tree, feature_names, max_depth=3)
+        print(tree_txt)
         if len(results_tree) == 0:
             results_tree = mine_ltree_rules(
                 df,
