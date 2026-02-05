@@ -2,7 +2,7 @@
 
   
 
-##### This branch contains the frozen code for the [IDA 2026 conference]([https://ida2026.liacs.nl/](https://ida2026.liacs.nl/ "https://ida2026.liacs.nl/").
+This branch contains the frozen code for the [IDA 2026 conference]([https://ida2026.liacs.nl/](https://ida2026.liacs.nl/ "https://ida2026.liacs.nl/").
 
   
 
