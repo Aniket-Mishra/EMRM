@@ -1,9 +1,14 @@
-Exceptional Model Mining on Model Residuals: Balancing Interpretability and Expressiveness in Rich Description Languages
+# Exceptional Model Residual Mining, and Three Richer EMM Description Languages
 
-This repo contains the paper's code.
-Look in the "Pipeline" folder for the code.
+This repo contains the code the the paper "Exceptional Model Residual Mining, and Three Richer EMM Description Languages". The frozen code submitted to the IDA 2026 conference can be found in the branch: "IDA_2026_Submission".
 
-To reproduce the results, we need to do the following, after having a Python environment set up:
+To replicate the results in the paper the following steps need to be followed:
+
+1. Load a python environment
+2. Run the code inside the pipeline folder by following the instructions below
+3. The results will be saved locally.
+
+### Replication Steps:
 
 ```
 python3 1_dataset_setup.py
